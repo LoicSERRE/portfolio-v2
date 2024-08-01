@@ -21,13 +21,13 @@ export default function Reception() {
             <Header toggleTheme={toggleTheme} theme={theme} />
 
             <section className={`cvSection flex flex-col items-center justify-center`}>
-                <h1 className="text-4xl font-bold mb-4">Mon CV</h1>
-                <p className="mb-8">Vous pouvez télécharger mon CV en cliquant sur le bouton ci-dessous.</p>
-                <a href="/img/CV.pdf" download="CV_SERRE_Loïc.pdf" className={`downloadButton px-6 py-3 rounded-lg font-bold text-white shadow-lg`}>Télécharger CV</a>
+                <h1 className="text-5xl font-bold mb-4 text-responsive-title">Mon CV</h1>
+                <hr className="w-16 h-1 bg-gray-300 my-8" />
+                <p className="text-lg mb-8 text-responsive-paragraph">Vous pouvez télécharger mon CV en cliquant sur le bouton ci-dessous.</p>
+                <a href="/img/CV.pdf" download="CV_SERRE_Loïc.pdf" className="downloadbutton">Télécharger</a>
             </section>
 
             <Footer />
-            
         </main>
     );
 }
