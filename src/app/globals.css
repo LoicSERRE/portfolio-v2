@@ -186,11 +186,11 @@ footer {
   border-radius: 0 5px 5px 0
 }
 
-.btn-linkedin:hover>i,
+/* .btn-linkedin:hover>i,
 .btn-linkedin:focus>i {
   /* Pas sur de rajouter le changement de couleur de logo */
   /*color:#007bb6*/
-}
+/*} */
 
 .btn-github:hover>i,
 .btn-github:focus>i {
@@ -514,6 +514,7 @@ footer {
   border-radius: 20px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
   transition: all 0.3s;
+  margin: 0 auto;
 }
 
 .send-button:hover {
