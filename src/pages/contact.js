@@ -20,7 +20,7 @@ export default function Contact() {
         if (messageStatus) {
             const timer = setTimeout(() => {
                 setMessageStatus("");
-            }, 2000); // Ferme la modale après 2 secondes
+            }, 3000); // Ferme la modale après 3 secondes
 
             return () => clearTimeout(timer); // Nettoie le timer si le composant est démonté ou si messageStatus change
         }
