@@ -1,4 +1,4 @@
-# Mon Portfolio en Ingénierie Informatique
+# Mon Portfolio 
 
 Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/) et [Tailwind CSS](https://tailwindcss.com/).
 
