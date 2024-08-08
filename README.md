@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Mon Portfolio en Ingénierie Informatique
 
-## Getting Started
+Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/) et [Tailwind CSS](https://tailwindcss.com/).
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+
+## Aperçu
+
+Ce portfolio présente mes projets, compétences et expériences en tant qu'étudiant en ingénierie informatique. Vous y trouverez des démonstrations de mes travaux, des descriptions de mes compétences techniques et des informations sur mes expériences professionnelles et académiques.
+
+![Portfolio](http://localhost:3000/img/img_menu_portfolio.png)
+
+## Démarrage
+
+Pour commencer, suivez ces étapes pour exécuter le serveur de développement :
 
 ```bash
 npm run dev
-# or
+# ou
 yarn dev
-# or
+# ou
 pnpm dev
-# or
+# ou
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) avec votre navigateur pour voir le résultat.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Si vous voulez voir le résultat bien plus vite, mon portfolio est déjà déployé à l'adresse suivante : [https://loicserre.freeboxos.fr/](https://loicserre.freeboxos.fr/).
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Fonctionnalités
 
-## Learn More
+- **Accueil** : Une page d'accueil avec une brève introduction sur ce que je fais et ce que vous trouverez sur ce site.
+- **Parcours** : Une section détaillée sur mon parcours académique et professionnel.
+- **Compétences** : Une liste de mes compétences techniques et outils que j'ai utilisés.
+- **Projets** : Une galerie de mes projets avec des liens vers les dépôts GitHub et les démonstrations en ligne.
+- **CV** : Téléchargez mon CV au format PDF pour en savoir plus sur mon parcours et mes compétences.
+- **Contact** : Un formulaire de contact pour me joindre directement par mail.
 
-To learn more about Next.js, take a look at the following resources:
+## Technologies Utilisées
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Ce projet utilise les technologies suivantes :
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white) - Framework React pour le développement web.
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) - Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) - Langage de programmation pour le web.
+- ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) - Framework CSS utilitaire pour un design rapide et efficace.
 
-## Deploy on Vercel
+## Contact
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Si vous avez des questions ou souhaitez discuter de mes projets, n'hésitez pas à me contacter via le formulaire de contact sur ce site.
