@@ -1,4 +1,4 @@
-# Mon Portfolio 
+# Mon Portfolio V2
 
 Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/) et [Tailwind CSS](https://tailwindcss.com/).
 
@@ -11,7 +11,7 @@ Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nex
 
 Ce portfolio présente mes projets, compétences et expériences en tant qu'étudiant en ingénierie informatique. Vous y trouverez des démonstrations de mes travaux, des descriptions de mes compétences techniques et des informations sur mes expériences professionnelles et académiques.
 
-![Portfolio](http://localhost:3000/img/img_menu_portfolio.png)
+![Portfolio](https://loicserre.freeboxos.fr/img/img_menu_portfolio.png)
 
 ## Démarrage
 
