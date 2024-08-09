@@ -24,8 +24,8 @@ export default function Home() {
 
             <ul className="space-y-5">
                 <HomeButton href="/reception" label="Accueil" />
-                <HomeButton href="/skills" label="Compétences" />
                 <HomeButton href="/career" label="Parcours" />
+                <HomeButton href="/skills" label="Compétences" />
                 <HomeButton href="/projects" label="Projets" />
                 <HomeButton href="/cv" label="CV" />
                 <HomeButton href="/contact" label="Contact" />
