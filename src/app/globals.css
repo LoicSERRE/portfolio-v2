@@ -1262,3 +1262,33 @@ footer {
   z-index: 0;
   box-shadow: inset 0 0 0 10em rgb(0, 204, 102)
 }
+
+.threescene {
+  padding-top: 20px;
+  width: 100vw;
+  height: 80vh;
+  position: relative;
+  border-radius: 20px; /* Ajoutez cette ligne pour arrondir les bords */
+  overflow: hidden; /* Assurez-vous que le contenu ne dépasse pas les bords arrondis */
+}
+
+/* Pour les écrans de bureau */
+@media (min-width: 1024px) {
+  .threescene {
+    height: 80vh;
+  }
+}
+
+/* Pour les tablettes */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .threescene {
+    height: 70vh;
+  }
+}
+
+/* Pour les téléphones portables */
+@media (max-width: 767px) {
+  .threescene {
+    height: 65vh;
+  }
+}
