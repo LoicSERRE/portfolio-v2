@@ -1,11 +1,12 @@
 # Mon Portfolio V2
 
-Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/) et [Tailwind CSS](https://tailwindcss.com/).
+Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/) et [Three.js](https://threejs.org/). 
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
 
 ## Aperçu
 
@@ -48,6 +49,7 @@ Ce projet utilise les technologies suivantes :
 - ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) - Bibliothèque JavaScript pour la construction d'interfaces utilisateur.
 - ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) - Langage de programmation pour le web.
 - ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white) - Framework CSS utilitaire pour un design rapide et efficace.
+- ![Three.js](https://img.shields.io/badge/Three.js-000000?style=for-the-badge&logo=threedotjs&logoColor=white) - Bibliothèque JavaScript pour la création de graphiques 3D.
 
 ## Contact
 
