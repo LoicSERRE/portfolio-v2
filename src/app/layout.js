@@ -38,15 +38,18 @@ export default function RootLayout({ children }) {
 
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8GT2908RN"></script>
-        {/* <script>
-          {`
+        <script dangerouslySetInnerHTML={{
+          __html: `
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            function gtag() { dataLayer.push(arguments); }
             gtag('js', new Date());
-
             gtag('config', 'G-D8GT2908RN');
-          `}
-        </script> */}
+          `,
+        }} />
+
+        {/* Google ReCaptcha */}
+        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LducCwqAAAAAA76XPqW2RJtV9MeFzH_Enj9rHlz"></script>
+  
       </head>
       <body className={inter.className}>{children}</body>
     </html>
