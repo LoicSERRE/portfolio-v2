@@ -1,6 +1,6 @@
 # Mon Portfolio V2
 
-Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/) et [Three.js](https://threejs.org/). 
+Bienvenue sur mon portfolio ! Ce projet est construit avec [Next.js](https://nextjs.org/), [React](https://reactjs.org/), [Tailwind CSS](https://tailwindcss.com/) et [Three.js](https://threejs.org/).
 
 ![Next.js](https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
 ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
@@ -36,7 +36,7 @@ Si vous voulez voir le résultat bien plus vite, mon portfolio est déjà déplo
 
 - **Accueil** : Une page d'accueil avec une brève introduction sur ce que je fais et ce que vous trouverez sur ce site.
 - **Parcours** : Une section détaillée sur mon parcours académique et professionnel.
-- **Compétences** : Une liste de mes compétences techniques et outils que j'ai utilisés.
+- **Compétences** : Une scène 3D réaliser en Three.JS permettant de présenter toutes mes compétences de manière originale.
 - **Projets** : Une galerie de mes projets avec des liens vers les dépôts GitHub et les démonstrations en ligne.
 - **CV** : Téléchargez mon CV au format PDF pour en savoir plus sur mon parcours et mes compétences.
 - **Contact** : Un formulaire de contact pour me joindre directement par mail.
