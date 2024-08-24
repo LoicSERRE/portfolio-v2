@@ -14,26 +14,27 @@ async function fetchGithubStars(repo) {
     return data.stars;
 }
 
-
 export default function Projects() {
     const [theme, setTheme] = useState('gradient');
     const [projects, setProjects] = useState([
         {
             id: 1,
             title: "Projet annuel de 3ème année de BUT",
-            description: "Développement d'une API et d'une application web pour gérer une cartographie de port commercial.",
+            description: "Développement d'un PoC permettant de gérer une cartographie de port commercial.",
             technologies: ["JavaScript", "Node.js", "Express", "React", "Docker"],
-            link: "/projets/projet-annuel",
-            image: "/img/projet-annuel.png",
+            isOnline: true,
+            link: "/projects/projetannuel",
+            image: "/img/MGPS-logo-mini.png",
             githubRepo: "Projet-annuel-BUT3",
             githubStars: 0
         },
         {
             id: 2,
             title: "Traitement d'images",
-            description: "Création d'un notebook en Python pour développer l'algorithme d'Otsu et un algorithme de segmentation d'image.",
-            technologies: ["Python", "Jupyter Notebook", "K-means"],
-            link: "/projects/image-processing",
+            description: "Création d'un notebook en Python pour développer différent algorithmes de segmentation et de classification d'images.",
+            technologies: ["Python", "Jupyter Notebook"],
+            isOnline: true,
+            link: "/projects/imageprocessing",
             image: "/img/perr.jpg",
             githubRepo: "Segmentation-et-classification",
             githubStars: 0
@@ -41,9 +42,10 @@ export default function Projects() {
         {
             id: 3,
             title: "API REST",
-            description: "Création d'une API REST en JavaScript pour l'organisation de tournois de jeux vidéo.",
+            description: "Exercice de création d'une API en JavaScript avec le respect des principes REST.",
             technologies: ["JavaScript", "Node.js", "Express"],
-            link: "/projects/rest-api",
+            isOnline: true,
+            link: "/projects/restapi",
             image: "/img/Rest-API.png",
             githubRepo: "API-REST",
             githubStars: 0
@@ -51,8 +53,9 @@ export default function Projects() {
         {
             id: 4,
             title: "Contrôle de ThreeJS",
-            description: "Découverte de la technologie ThreeJS pour la création de scènes 3D dans un navigateur web.",
+            description: "Scène 3D dans le cadre d'une évalutation en Three.js.",
             technologies: ["JavaScript", "Three.js"],
+            isOnline: true,
             link: "/projects/threejstest",
             image: "/img/threejstest.png",
             githubRepo: "ThreeJS-Test",
@@ -62,9 +65,10 @@ export default function Projects() {
             id: 5,
             title: "Agenda",
             description: "Développement d'un agenda en React sans utiliser de bibliothèques pour la création de l'agenda.",
-            technologies: ["JavaScript", "React"],
+            technologies: ["JavaScript", "React", "CSS"],
+            isOnline: true,
             link: "/projects/agenda",
-            image: "/img/projet-agenda.png",
+            image: "/img/logoagenda.png",
             githubRepo: "Projet-REACT-BUT-2",
             githubStars: 0
         }
@@ -81,7 +85,6 @@ export default function Projects() {
         async function updateGithubStars() {
             const updatedProjects = await Promise.all(projects.map(async (project) => {
                 const stars = await fetchGithubStars(project.githubRepo);
-                
                 return { ...project, githubStars: stars };
             }));
             setProjects(updatedProjects);
@@ -89,7 +92,9 @@ export default function Projects() {
         updateGithubStars();
     }, []);
 
-    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme' : 'bg-white text-black';
+    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme text-gray-100' : 'bg-white text-black';
+    const textColorClass = theme === 'dark' ? 'text-white' : theme === 'gradient' ? 'text-gray-100' : 'text-black';
+    const linkHoverClass = 'hover:text-teal-300 focus-visible:text-teal-300';
 
     return (
         <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`}>
@@ -103,11 +108,10 @@ export default function Projects() {
                             <h3>
                                 <Link href={project.link} target="_blank" rel="noreferrer noopener" legacyBehavior>
                                     <a
-                                        className="inline-flex items-baseline font-medium leading-tight text-slate-200 hover:text-teal-300 focus-visible:text-teal-300 group/link text-base"
+                                        className={`inline-flex items-baseline font-medium leading-tight ${textColorClass} ${linkHoverClass} group/link text-base`}
                                         aria-label={`${project.title} (opens in a new tab)`}
                                     >
                                         <span className="relative">
-                                            <span className="absolute -inset-x-4 -inset-y-2.5 hidden rounded md:-inset-x-6 md:-inset-y-4 lg:block"></span>
                                             <span>
                                                 {project.title}
                                                 <span className="inline-block">
@@ -130,18 +134,39 @@ export default function Projects() {
                                     </a>
                                 </Link>
                             </h3>
-                            <p className="mt-2 text-sm leading-normal">{project.description}</p>
+
+                            {/* Bloc pour indiquer la disponibilité en ligne */}
+                            {project.isOnline && (
+                                <div className="mt-1 text-xs text-green-500 font-semibold flex items-center">
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        className="inline-block h-4 w-4 mr-1"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm-2.293-6.707a1 1 0 011.414 0L10 12.586l2.879-2.88a1 1 0 111.414 1.414l-3.586 3.586a1 1 0 01-1.414 0l-2.586-2.586a1 1 0 010-1.414z"
+                                            clipRule="evenodd"
+                                        />
+                                    </svg>
+                                    Disponible en ligne
+                                </div>
+                            )}
+
+                            <h4 className="mt-2 text-sm text-white">{project.description}</h4>
+
                             {project.githubStars !== 0 && (
                                 <Link href={project.link} target="_blank" rel="noreferrer noopener" legacyBehavior>
                                     <a
-                                        className="relative mt-2 inline-flex items-center text-sm font-medium text-slate-300 hover:text-teal-300 focus-visible:text-teal-300"
+                                        className={`relative mt-2 inline-flex items-center text-sm font-medium ${textColorClass} ${linkHoverClass}`}
                                         aria-label={`${project.githubStars} stars on GitHub (opens in a new tab)`}
                                     >
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
                                             viewBox="0 0 20 20"
                                             fill="currentColor"
-                                            className="mr-1 h-3 w-3"
+                                            className={`mr-1 h-3 w-3 ${textColorClass}`}
                                             aria-hidden="true"
                                         >
                                             <path
@@ -154,10 +179,11 @@ export default function Projects() {
                                     </a>
                                 </Link>
                             )}
+
                             <ul className="mt-2 flex flex-wrap" aria-label="Technologies used:">
                                 {project.technologies.map((tech, index) => (
                                     <li key={index} className="mr-1.5 mt-2">
-                                        <div className="flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300">
+                                        <div className={`flex items-center rounded-full bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-300`}>
                                             {tech}
                                         </div>
                                     </li>
@@ -167,10 +193,10 @@ export default function Projects() {
                         <img
                             alt={project.title}
                             loading="lazy"
-                            width="200"
-                            height="48"
+                            width="500"
+                            height="500"
                             decoding="async"
-                            className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
+                            className="p-2 rounded-[20px] border-slate-200/10 transition group-hover:border-slate-200/30 sm:order-1 sm:col-span-2 sm:translate-y-1"
                             src={project.image}
                         />
                     </div>
