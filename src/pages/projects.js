@@ -1,3 +1,4 @@
+import useTheme from '../hooks/useTheme';
 import { useState, useEffect } from 'react';
 import '../app/globals.css';
 import Header from '@/components/header';
@@ -15,7 +16,8 @@ async function fetchGithubStars(repo) {
 }
 
 export default function Projects() {
-    const [theme, setTheme] = useState('gradient');
+    const { theme, toggleTheme, themeClass } = useTheme();
+
     const [projects, setProjects] = useState([
         {
             id: 1,
@@ -74,13 +76,6 @@ export default function Projects() {
         }
     ]);
 
-    const toggleTheme = () => {
-        const themes = ['default', 'dark', 'gradient'];
-        const currentIndex = themes.indexOf(theme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        setTheme(themes[nextIndex]);
-    };
-
     useEffect(() => {
         async function updateGithubStars() {
             const updatedProjects = await Promise.all(projects.map(async (project) => {
@@ -92,7 +87,6 @@ export default function Projects() {
         updateGithubStars();
     }, []);
 
-    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme text-gray-100' : 'bg-white text-black';
     const textColorClass = theme === 'dark' ? 'text-white' : theme === 'gradient' ? 'text-gray-100' : 'text-black';
     const linkHoverClass = 'hover:text-teal-300 focus-visible:text-teal-300';
 

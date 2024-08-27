@@ -1,7 +1,4 @@
-import { useState } from 'react';
 import '../app/globals.css';
-import Header from '@/components/header';
-import Footer from '@/components/footer';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExclamationTriangle } from '@fortawesome/free-solid-svg-icons';
 

@@ -1,21 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import useTheme from '../hooks/useTheme';
 import '../app/globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
-import 'intersection-observer'; // Importer la bibliothèque
+import 'intersection-observer';
 
 export default function Career() {
-    const [theme, setTheme] = useState('gradient');
     const timelineBlocks = useRef([]);
-
-    const toggleTheme = () => {
-        const themes = ['default', 'dark', 'gradient'];
-        const currentIndex = themes.indexOf(theme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        setTheme(themes[nextIndex]);
-    };
-
-    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme' : 'bg-white text-black';
+    const { theme, toggleTheme, themeClass } = useTheme();
 
     useEffect(() => {
         // Afficher le premier élément au chargement de la page
@@ -47,7 +39,6 @@ export default function Career() {
         };
     }, []);
 
-
     return (
         <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`}>
             <Header toggleTheme={toggleTheme} theme={theme} />
@@ -69,7 +60,7 @@ export default function Career() {
                     </div>
                 </div>
 
-                <div className="cd-timeline-block is-hidden righ" ref={el => timelineBlocks.current[1] = el}>
+                <div className="cd-timeline-block is-hidden right" ref={el => timelineBlocks.current[1] = el}>
                     <div className="cd-timeline-img cd-cesi">
                         <img src="./img/cesi.png" alt="Logo CESI" className='cesi-img' />
                     </div>

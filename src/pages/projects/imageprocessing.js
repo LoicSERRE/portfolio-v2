@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import useTheme from '@/hooks/useTheme';
 import '../../app/globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
@@ -19,16 +19,9 @@ const projectData = {
 };
 
 export default function Projet() {
-    const [theme, setTheme] = useState('gradient');
+    const { theme, toggleTheme, themeClass } = useTheme();
 
-    const toggleTheme = () => {
-        const themes = ['default', 'dark', 'gradient'];
-        const currentIndex = themes.indexOf(theme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        setTheme(themes[nextIndex]);
-    };
-
-    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme' : 'bg-white text-black';
+    if (!theme) return null;
 
     return (
         <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`}>

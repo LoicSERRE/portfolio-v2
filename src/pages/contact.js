@@ -1,3 +1,4 @@
+import useTheme from '@/hooks/useTheme';
 import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import '../app/globals.css';
@@ -7,7 +8,7 @@ import SendButton from '@/components/sendbutton';
 import { FaCheckCircle, FaTimesCircle } from 'react-icons/fa';
 
 export default function Contact() {
-    const [theme, setTheme] = useState('gradient');
+    const { theme, toggleTheme, themeClass } = useTheme();
     const [form, setForm] = useState({ name: '', email: '', message: '' });
     const [messageStatus, setMessageStatus] = useState('');
     const [isSuccess, setIsSuccess] = useState(true); // Changez à false pour tester le message d'erreur
@@ -46,16 +47,7 @@ export default function Contact() {
         const { name, value } = e.target;
         setForm(prevForm => ({ ...prevForm, [name]: value }));
     };
-
-    const toggleTheme = () => {
-        const themes = ['default', 'dark', 'gradient'];
-        const currentIndex = themes.indexOf(theme);
-        const nextIndex = (currentIndex + 1) % themes.length;
-        setTheme(themes[nextIndex]);
-    };
-
-    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme' : 'bg-white text-black';
-
+    
     const closeModal = () => {
         setMessageStatus("");
     };
