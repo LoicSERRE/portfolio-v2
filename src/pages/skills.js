@@ -13,7 +13,7 @@ export default function Skills() {
         <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`}>
             <Header toggleTheme={toggleTheme} theme={theme} />
             <div className="flex flex-col items-center justify-center h-full">
-                <h1 className="text-4xl font-bold">Skills</h1>
+                <h1 className="text-4xl font-bold">Compétences</h1>
                 <p className="text-lg text-center">Cliquez sur un logo pour en savoir plus</p>
                 
                 <SkillScene />
