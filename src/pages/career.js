@@ -4,6 +4,7 @@ import '../app/globals.css';
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 import 'intersection-observer';
+import Image from 'next/image';
 
 export default function Career() {
     const timelineBlocks = useRef([]);
@@ -17,7 +18,7 @@ export default function Career() {
             firstBlock.classList.add(animationClass);
             firstBlock.classList.remove('is-hidden');
         }
-
+    
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -27,14 +28,17 @@ export default function Career() {
                 }
             });
         }, { threshold: 0.75 });
-
-        timelineBlocks.current.slice(1).forEach(block => {
+    
+        const blocks = timelineBlocks.current.slice(1);
+        blocks.forEach(block => {
             observer.observe(block);
         });
-
+    
         return () => {
-            timelineBlocks.current.slice(1).forEach(block => {
-                observer.unobserve(block);
+            blocks.forEach(block => {
+                if (block) {
+                    observer.unobserve(block);
+                }
             });
         };
     }, []);
@@ -43,18 +47,18 @@ export default function Career() {
         <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`}>
             <Header toggleTheme={toggleTheme} theme={theme} />
 
-            <h1 className="text-5x1 font-bold mb-4 text-responsive-title">Parcours universitaire et professionnel</h1>
+            <h1 className="text-5xl font-bold mb-4 text-responsive-title">Parcours universitaire et professionnel</h1>
             <hr className="w-16 h-1 bg-gray-300 my-4" />
-            <p className="text-lg mb-8 text-responsive-paragraph">Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu'à mon alternance actuelle chez Sopra Steria.</p>
+            <p className="text-lg mb-8 text-responsive-paragraph">Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu&apos;à mon alternance actuelle chez Sopra Steria.</p>
             <section id="cd-timeline" className="cd-container">
 
                 <div className="cd-timeline-block is-hidden left" ref={el => timelineBlocks.current[0] = el}>
                     <div className="cd-timeline-img cd-sopra">
-                        <img src="./img/soprasterialogo.jpg" alt="Logo Sopra Steria" className='sopra-img' />
+                        <Image src="/img/soprasterialogo.jpg" alt="Logo Sopra Steria" className='sopra-img' width={2000} height={2000} />
                     </div>
                     <div className="cd-timeline-content">
                         <h2>Alternance chez Sopra Steria</h2>
-                        <p className='text-black'>Je suis actuellement en alternance chez Sopra Steria dans le cadre de mes études d'ingénierie informatique au CESI.</p>
+                        <p className='text-black'>Je suis actuellement en alternance chez Sopra Steria dans le cadre de mes études d&apos;ingénierie informatique au CESI.</p>
                         <a href="https://www.soprasteria.com/fr" target="_blank" rel="noopener noreferrer" className="cd-read-more">En savoir plus sur Sopra Steria</a>
                         <span className="cd-date">Octobre 2024 - Septembre 2027</span>
                     </div>
@@ -62,11 +66,11 @@ export default function Career() {
 
                 <div className="cd-timeline-block is-hidden right" ref={el => timelineBlocks.current[1] = el}>
                     <div className="cd-timeline-img cd-cesi">
-                        <img src="./img/cesi.png" alt="Logo CESI" className='cesi-img' />
+                        <Image src="/img/cesi.png" alt="Logo CESI" className='cesi-img' width={2000} height={2000} />
                     </div>
                     <div className="cd-timeline-content">
-                        <h2>École d'ingénieur CESI</h2>
-                        <p className='text-black'>Admis à l'école d'ingénieur CESI, je poursuis ma formation en ingénierie informatique en alternance.</p>
+                        <h2>École d&apos;ingénieur CESI</h2>
+                        <p className='text-black'>Admis à l&apos;école d&apos;ingénieur CESI, je poursuis ma formation en ingénierie informatique en alternance.</p>
                         <a href="https://www.cesi.fr/formation/ingenieur-e-informatique-cursus-en-3-ans-par-lapprentissage-2513617/" target="_blank" rel="noopener noreferrer" className="cd-read-more">
                             Détails sur la formation
                         </a>
@@ -76,13 +80,13 @@ export default function Career() {
 
                 <div className="cd-timeline-block is-hidden left" ref={el => timelineBlocks.current[2] = el}>
                     <div className="cd-timeline-img cd-mgps">
-                        <img src="/img/MGPS-logo-mini.png" alt="Logo de MGPS" className='mgps-img' />
+                        <Image src="/img/MGPS-logo-mini.png" alt="Logo de MGPS" className='mgps-img' width={2000} height={2000} />
                     </div>
                     <div className="cd-timeline-content">
                         <h2>Alternance 3<sup>ème</sup> année BUT Informatique</h2>
                         <p className='text-black'>Durant cette alternance de 10 mois chez MGPS (Manutentions Gérée Par Satellites), la mission était de développer
                             une refonte d’application. Ce logiciel est embarqué pour des engins fonctionnants sur les ports de
-                            commerce. J'ai réaliser la génération de cartographies de terminaux commerciaux, gestion des mouvements des engins, gestion des missions des caristes…</p>
+                            commerce. J&apos;ai réalisé la génération de cartographies de terminaux commerciaux, gestion des mouvements des engins, gestion des missions des caristes…</p>
                         <a href="#0" className="cd-read-more">Site de MGPS</a>
                         <span className="cd-date">Septembre 2023 - Juin 2024</span>
                     </div>
@@ -90,7 +94,7 @@ export default function Career() {
 
                 <div className="cd-timeline-block is-hidden right" ref={el => timelineBlocks.current[3] = el}>
                     <div className="cd-timeline-img cd-mgps">
-                        <img src="/img/MGPS-logo-mini.png" alt="Logo de MGPS" className='mgps-img' />
+                        <Image src="/img/MGPS-logo-mini.png" alt="Logo de MGPS" className='mgps-img' width={2000} height={2000} />
                     </div>
                     <div className="cd-timeline-content">
                         <h2>Stage 2<sup>ème</sup> année BUT Informatique</h2>
@@ -105,13 +109,13 @@ export default function Career() {
 
                 <div className="cd-timeline-block is-hidden left" ref={el => timelineBlocks.current[4] = el}>
                     <div className="cd-timeline-img cd-iut">
-                        <img src="/img/université.png" alt="Logo d'AMU" className='iut-img' />
+                        <Image src="/img/université.png" alt="Logo d'AMU" className='iut-img' width={2000} height={2000} />
                     </div>
                     <div className="cd-timeline-content">
-                        <h2>BUT Informatique à l'Université d'Aix-Marseille</h2>
+                        <h2>BUT Informatique à l&apos;Université d&apos;Aix-Marseille</h2>
                         <p className='text-black'>
-                            J'ai suivis le parcours réalisation d’applications : conception, développement, validation. L'IUT d'Arles est spécialisé en imagerie numérique, j'ai donc pu acquérir des bases en imagerie 2D et 3D. 
-                            Le BUT Informatique m'a permis d'acquérir des compétences solides en programmation, gestion de projet et conception de 
+                            J&apos;ai suivi le parcours réalisation d’applications : conception, développement, validation. L&apos;IUT d&apos;Arles est spécialisé en imagerie numérique, j&apos;ai donc pu acquérir des bases en imagerie 2D et 3D. 
+                            Le BUT Informatique m&apos;a permis d&apos;acquérir des compétences solides en programmation, gestion de projet et conception de 
                             logiciels, tout en développant ma capacité à résoudre des problèmes complexes et à travailler en équipe.
                         </p>
                         <a href="https://iut.univ-amu.fr/fr/formations/bachelor-universitaire-de-technologie/but-informatique/but-info-arles" target="_blank" rel="noopener noreferrer" className="cd-read-more">Détails sur la formation</a>
@@ -121,11 +125,11 @@ export default function Career() {
 
                 <div className="cd-timeline-block is-hidden right" ref={el => timelineBlocks.current[5] = el}>
                     <div className="cd-timeline-img cd-pasquet">
-                        <img src="/img/lycée.jpg" alt="Logo Lycée Pasquet" className='pasquet-img' />
+                        <Image src="/img/lycée.jpg" alt="Logo Lycée Pasquet" className='pasquet-img' width={2000} height={2000} />
                     </div>
                     <div className="cd-timeline-content">
                         <h2>Baccalauréat STI2D</h2>
-                        <p className='text-black'>J'ai obtenu mon Baccalauréat STI2D avec une spécialisation en Systèmes d'Information et Numérique (SIN) avec mention bien.</p>
+                        <p className='text-black'>J&apos;ai obtenu mon Baccalauréat STI2D avec une spécialisation en Systèmes d&apos;Information et Numérique (SIN) avec mention bien.</p>
                         <a href="https://www.onisep.fr/ressources/univers-formation/formations/lycees/bac-techno-sti2d-sciences-et-technologies-de-l-industrie-et-du-developpement-durable-enseignement-specifique-systemes-d-information-et-numerique" target="_blank" rel="noopener noreferrer" className="cd-read-more">En savoir plus sur le Baccalauréat STI2D</a>
                         <span className="cd-date">2020-2021</span>
                     </div>
