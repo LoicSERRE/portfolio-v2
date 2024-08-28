@@ -4,6 +4,7 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import { motion } from 'framer-motion';
 import LinkyButton from '@/components/linkybutton';
+import Image from 'next/image';
 
 export default function Reception() {
     const { theme, toggleTheme, themeClass } = useTheme();
@@ -20,7 +21,7 @@ export default function Reception() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
             >
-                <h1 className="text-6xl font-bold mb-12 pagetitle">Hey, c'est Loïc SERRE</h1>
+                <h1 className="text-6xl font-bold mb-12 pagetitle">Hey, c&apos;est Loïc SERRE</h1>
 
                 <p className="text-lg mb-4">
                     Étudiant en ingénierie informatique au <a href="https://www.cesi.fr/ecole/presentation/" target="_blank" rel="noopener noreferrer" style={{color: '#fbe216'}} className="underline">CESI</a> et actuellement en alternance chez <a href="https://www.soprasteria.com/fr/nous-connaitre" target="_blank" rel="noopener noreferrer" className="text-red-500 underline">Sopra Steria</a>. Je suis passionné de technologie et de musique, curieux et toujours en quête de nouvelles connaissances.
@@ -28,10 +29,10 @@ export default function Reception() {
 
                 <div className="flex justify-center mb-4">
                     <a href="https://www.cesi.fr/ecole/presentation/" target="_blank" rel="noopener noreferrer">
-                        <img src="/img/cesi.png" alt="CESI Logo" className="w-20 h-20 mr-4" style={{ borderRadius: '50%' }} />
+                        <Image src="/img/cesi.png" alt="CESI Logo" className="w-20 h-20 mr-4" style={{ borderRadius: '50%' }} width={2000} height={2000} />
                     </a>
                     <a href="https://www.soprasteria.com/fr/nous-connaitre" target="_blank" rel="noopener noreferrer">
-                        <img src="/img/soprasterialogo.jpg" alt="Sopra Steria Logo" className="w-20 h-20" style={{ borderRadius: '50%' }} />
+                        <Image src="/img/soprasterialogo.jpg" alt="Sopra Steria Logo" className="w-20 h-20" style={{ borderRadius: '50%' }} width={2000} height={2000} />
                     </a>
                 </div>
 
@@ -44,7 +45,7 @@ export default function Reception() {
                 </div>
 
                 <p className="text-lg mb-4">
-                    Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d'ores et déjà aller sur la section suivante "Parcours" en passant par le menu de navigation.
+                    Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d&apos;ores et déjà aller sur la section suivante &quot;Parcours&quot; en passant par le menu de navigation.
                 </p>
             </motion.section>
 

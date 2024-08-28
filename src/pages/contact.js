@@ -59,7 +59,7 @@ export default function Contact() {
             <section className={`cvSection flex flex-col items-center justify-center`}>
                 <h1 className="text-5xl font-bold mb-4 text-responsive-title">Contact</h1>
                 <hr className="w-16 h-1 bg-gray-300 my-8" />
-                <p className="text-lg mb-8 text-responsive-paragraph">N'hésitez pas à me contacter en remplissant le formulaire ci-dessous et je vous répondrai dès que possible.</p>
+                <p className="text-lg mb-8 text-responsive-paragraph">N&apos;hésitez pas à me contacter en remplissant le formulaire ci-dessous et je vous répondrai dès que possible.</p>
                 <form className="contact__form" onSubmit={sendEmail}>
                     <input type="text" id="name" name="name" placeholder="Votre nom" value={form.name} onChange={handleChange} required className="form-input" />
                     <input type="email" id="email" name="email" placeholder="Votre email" value={form.email} onChange={handleChange} required className="form-input" />
