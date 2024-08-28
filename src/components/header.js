@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSun, faPalette } from '@fortawesome/free-solid-svg-icons';
+import Link from 'next/link';
 import '../app/globals.css';
 
 export default function Header({ toggleTheme, theme }) {
@@ -45,13 +46,13 @@ export default function Header({ toggleTheme, theme }) {
             {!isHomePage && (
                 <nav id="sidebarMenu" className={isMenuOpen ? 'open' : ''}>
                     <ul className="sidebarMenuInner">
-                        <li><a href="/">Menu principal</a></li>
-                        <li><a href="/reception">Accueil</a></li>
-                        <li><a href="/career">Parcours</a></li>
-                        <li><a href="/skills">Compétences</a></li>
-                        <li><a href="/projects">Projets</a></li>
-                        <li><a href="/cv">CV</a></li>
-                        <li><a href="/contact">Contact</a></li>
+                        <li><Link legacyBehavior href="/"><a>Menu principal</a></Link></li>
+                        <li><Link legacyBehavior href="/reception"><a>Accueil</a></Link></li>
+                        <li><Link legacyBehavior href="/career"><a>Parcours</a></Link></li>
+                        <li><Link legacyBehavior href="/skills"><a>Compétences</a></Link></li>
+                        <li><Link legacyBehavior href="/projects"><a>Projets</a></Link></li>
+                        <li><Link legacyBehavior href="/cv"><a>CV</a></Link></li>
+                        <li><Link legacyBehavior href="/contact"><a>Contact</a></Link></li>
                     </ul>
                 </nav>
             )}
