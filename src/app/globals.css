@@ -6,20 +6,31 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Pour le thème standard */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 72, 1, 255;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Thème par défaut */
+.default-theme {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* Thème sombre */
+.dark-theme {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+/* Thème en dégradé */
+.gradient-theme {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 72, 1, 255;
+  --background-end-rgb: 0, 0, 0;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+  transition: color 0.5s ease, background 0.5s ease;
 }
 
 @media (max-width: 768px) {

@@ -13,6 +13,13 @@ export default function useTheme() {
         }
     }, []);
 
+    useEffect(() => {
+        if (theme) {
+            document.body.classList.remove('default-theme', 'dark-theme', 'gradient-theme');
+            document.body.classList.add(`${theme}-theme`);
+        }
+    }, [theme]);
+
     const toggleTheme = () => {
         const themes = ['default', 'dark', 'gradient'];
         const currentIndex = themes.indexOf(theme);
@@ -23,7 +30,7 @@ export default function useTheme() {
         localStorage.setItem('theme', newTheme);
     };
 
-    const themeClass = theme === 'dark' ? 'bg-black text-white' : theme === 'gradient' ? 'gradient-theme' : 'bg-white text-black';
+    const themeClass = theme === 'dark' ? 'dark-theme' : theme === 'gradient' ? 'gradient-theme' : 'default-theme';
 
     return { theme, toggleTheme, themeClass };
 }
