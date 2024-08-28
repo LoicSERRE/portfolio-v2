@@ -11,6 +11,7 @@ const SpaceSkills = () => {
     const mountRef = useRef(null);
 
     useEffect(() => {
+        const currentMountRef = mountRef.current;
         // Initialisation de la scène
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(80, window.innerWidth / window.innerHeight, 0.1, 10000);
@@ -19,7 +20,7 @@ const SpaceSkills = () => {
         renderer.shadowMap.enabled = true; // Activer les ombres
         renderer.shadowMap.type = THREE.PCFShadowMap; // Type d'ombres plus doux
 
-        mountRef.current.appendChild(renderer.domElement);
+        currentMountRef.appendChild(renderer.domElement);
 
         // Contrôles de la caméra
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -32,7 +33,7 @@ const SpaceSkills = () => {
 
         // Limiter le pas de zoom
         controls.enableZoom = true;
-        controls.zoomSpeed = 0.05;
+        controls.zoomSpeed = 0.3;
 
         // Activer l'inertie (damping)
         controls.enableDamping = true;
@@ -180,7 +181,7 @@ const SpaceSkills = () => {
             context.clearRect(0, 0, size, size);
             context.fillStyle = 'rgba(0, 0, 0, 0)';
             context.fillRect(0, 0, size, size);
-            context.font = 'bold 65px Times New Roman';
+            context.font = 'bold 60px Times New Roman';
             context.fillStyle = 'white';
             context.textAlign = 'center';
             context.textBaseline = 'middle';
@@ -239,7 +240,7 @@ const SpaceSkills = () => {
             const spriteMaterial = new THREE.SpriteMaterial({ map: textTexture });
             const sprite = new THREE.Sprite(spriteMaterial);
             sprite.position.set(0, planetSize + 2, 0);  // Ajuster la position du texte en fonction de la taille de la planète
-            sprite.scale.set(10, 10, 1);
+            sprite.scale.set(15, 15, 1);
             planetGroup.add(sprite);
         
             // Charger et positionner les logos pour chaque compétence
@@ -307,15 +308,15 @@ const SpaceSkills = () => {
             'Méthode agile': 'https://scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-French.pdf',
             'MVVM': 'https://learn.microsoft.com/fr-fr/windows/uwp/data-binding/data-binding-and-mvvm',
             'MVC': 'https://openclassrooms.com/fr/courses/4670706-adoptez-une-architecture-mvc-en-php/7847928-decouvrez-comment-fonctionne-une-architecture-mvc',
-            'Persévérance': '', // Pas de documentation spécifique
-            'Esprit d’équipe': '', // Pas de documentation spécifique
-            'Adaptabilité': '', // Pas de documentation spécifique
-            'Résolution de problèmes': '', // Pas de documentation spécifique
-            'Pensée critique': '', // Pas de documentation spécifique
-            'Autonomie': '', // Pas de documentation spécifique
-            'Curiosité': '', // Pas de documentation spécifique
-            'Français (langue natale)': '', // Pas de documentation spécifique
-            'Anglais (B2)': '' // Pas de documentation spécifique
+            'Persévérance': '',
+            'Esprit d’équipe': '',
+            'Adaptabilité': '',
+            'Résolution de problèmes': '',
+            'Pensée critique': '',
+            'Autonomie': '',
+            'Curiosité': '',
+            'Français (langue natale)': '',
+            'Anglais (B2)': ''
         };                
 
         const onMouseClick = (event) => {
@@ -334,8 +335,6 @@ const SpaceSkills = () => {
                     
                     if (url) {
                         window.open(url, '_blank');
-                    } else {
-                        alert(`Pas de documentation disponible pour : ${skillName}`);
                     }
                 }
             }
@@ -403,7 +402,7 @@ const SpaceSkills = () => {
         handleResize(); // Appeler une fois pour initialiser
 
         return () => {
-            mountRef.current.removeChild(renderer.domElement);
+            currentMountRef.removeChild(renderer.domElement);
             window.removeEventListener('click', onMouseClick);
         };
     }, []);
