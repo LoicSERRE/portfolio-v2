@@ -5,14 +5,15 @@ import Header from '@/components/header';
 import Footer from '@/components/footer';
 import Link from 'next/link';
 import dotenv from 'dotenv';
+import Image from 'next/image';
 
 dotenv.config();
 
-// Fonction pour récupérer le nombre d'étoile sur un projet GitHub
-async function fetchGithubStars(repo) {
-    const response = await fetch(`/api/githubStars?repo=${repo}`);
+// Fonction pour récupérer les nombres d'étoiles sur plusieurs projets GitHub
+async function fetchGithubStars(repos) {
+    const response = await fetch(`/api/githubStars?repos=${repos.join(',')}`);
     const data = await response.json();
-    return data.stars;
+    return data; // On s'attend à ce que `data` soit un objet de la forme { repoName1: stars1, repoName2: stars2, ... }
 }
 
 export default function Projects() {
@@ -22,7 +23,7 @@ export default function Projects() {
         {
             id: 1,
             title: "PoC Cartographie Portuaire",
-            description: "Développement d'un PoC dans le cadre de ma dernière années de BUT Informatique, ce projet permet de gérer une cartographie de port commercial.",
+            description: "Développement d'un PoC dans le cadre de ma dernière année de BUT Informatique, ce projet permet de gérer une cartographie de port commercial.",
             technologies: ["JavaScript", "Node.js", "Express", "React", "Docker", "GitLab"],
             isOnline: false,
             link: "/projects/projetannuel",
@@ -33,7 +34,7 @@ export default function Projects() {
         {
             id: 2,
             title: "Traitement d'images",
-            description: "Création d'un notebook en Python pour développer différent algorithmes de segmentation et de classification d'images.",
+            description: "Création d'un notebook en Python pour développer différents algorithmes de segmentation et de classification d'images.",
             technologies: ["Python", "Jupyter Notebook"],
             isOnline: true,
             link: "/projects/imageprocessing",
@@ -55,7 +56,7 @@ export default function Projects() {
         {
             id: 4,
             title: "Contrôle de ThreeJS",
-            description: "Scène 3D dans le cadre d'une évalutation en Three.js.",
+            description: "Scène 3D dans le cadre d'une évaluation en Three.js.",
             technologies: ["JavaScript", "Three.js"],
             isOnline: false,
             link: "/projects/threejstest",
@@ -78,10 +79,14 @@ export default function Projects() {
 
     useEffect(() => {
         async function updateGithubStars() {
-            const updatedProjects = await Promise.all(projects.map(async (project) => {
-                const stars = await fetchGithubStars(project.githubRepo);
-                return { ...project, githubStars: stars };
+            const repoNames = projects.map(project => project.githubRepo);
+            const starsData = await fetchGithubStars(repoNames);
+
+            const updatedProjects = projects.map(project => ({
+                ...project,
+                githubStars: starsData[project.githubRepo] || 0
             }));
+
             setProjects(updatedProjects);
         }
         updateGithubStars();
@@ -91,12 +96,14 @@ export default function Projects() {
     const linkHoverClass = 'hover:text-teal-300 focus-visible:text-teal-300';
 
     return (
-        <main className={`flex min-h-screen flex-col items-center justify-between px-4 py-24 transition-colors ${themeClass}`}>            <Header toggleTheme={toggleTheme} theme={theme} />
+        <main className={`flex min-h-screen flex-col items-center justify-between px-4 py-24 transition-colors ${themeClass}`}>
+            <Header toggleTheme={toggleTheme} theme={theme} />
 
             <div className="w-full mx-auto space-y-8 project-card">
                 {projects.map((project) => (
                     <div key={project.id} className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover:list:opacity-30">
-                        <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded-md transition lg:-inset-x-6 group-hover:bg-slate-800/50 group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover:drop-shadow-lg"></div>                        <div className="z-10 sm:order-2 sm:col-span-6">
+                        <div className="absolute -inset-x-4 -inset-y-4 z-0 rounded-md transition lg:-inset-x-6 group-hover:bg-slate-800/50 group-hover:shadow-[inset_0_1px_0_0_rgba(148,163,184,0.1)] group-hover:drop-shadow-lg"></div>
+                        <div className="z-10 sm:order-2 sm:col-span-6">
                             <h3>
                                 <Link href={project.link} target="_blank" rel="noreferrer noopener" legacyBehavior>
                                     <a
@@ -182,7 +189,7 @@ export default function Projects() {
                                 ))}
                             </ul>
                         </div>
-                        <img
+                        <Image
                             alt={project.title}
                             width="500"
                             height="500"
