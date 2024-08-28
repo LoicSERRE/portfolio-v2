@@ -2,6 +2,7 @@ import React from 'react';
 import '../app/globals.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 export default function ProjectDetail({ project }) {
     return (
@@ -12,7 +13,7 @@ export default function ProjectDetail({ project }) {
             </div>
             <div className="project-body">
                 <div className="project-image-container">
-                    <img src={project.image} alt={project.title} className="project-image" />
+                    <Image src={project.image} alt={project.title} className="project-image" width={2000} height={2000} />
                 </div>
                 <div className="project-description-container">
                     <p className="project-description">{project.description}</p>
@@ -25,7 +26,7 @@ export default function ProjectDetail({ project }) {
                         {project.technologies.map((tech, index) => (
                             <li key={index} className="tech-item">
                                 <a href={tech.doc} target="_blank" rel="noopener noreferrer" className="tech-link">
-                                    <img src={tech.logo} alt={tech.name} className="tech-logo" />
+                                    <Image src={tech.logo} alt={tech.name} className="tech-logo" width={2000} height={2000} />
                                     <span className="tech-name">{tech.name}</span>
                                 </a>
                             </li>
