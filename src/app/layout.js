@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import Script from 'next/script';
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -31,25 +32,34 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/logo.png" type="image/x-icon" />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
         <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet" />
         
         <meta httpEquiv="origin-trial" content="AymqwRC7u88Y4JPvfIF2F37QKylC04248hLCdJAsh8xgOfe/dVJPV3XS3wLFca1ZMVOtnBfVjaCMTVudWM//5g4AAAB7eyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGV0YWdtYW5hZ2VyLmNvbTo0NDMiLCJmZWF0dXJlIjoiUHJpdmFjaVNhbmRib3hBZHNBUElzIiwiZXhwaXJ5IjoxNjk1MTY3OTk5LCJpc1RoaXJkUGFydHkiOnRydWV9" />
 
         {/* Google Analytics */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-D8GT2908RN"></script>
-        <script dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag() { dataLayer.push(arguments); }
-            gtag('js', new Date());
-            gtag('config', 'G-D8GT2908RN');
-          `,
-        }} />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-D8GT2908RN"
+          strategy="afterInteractive"
+        />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag() { dataLayer.push(arguments); }
+              gtag('js', new Date());
+              gtag('config', 'G-D8GT2908RN');
+            `,
+          }}
+        />
 
         {/* Google ReCaptcha */}
-        <script src="https://www.google.com/recaptcha/enterprise.js?render=6LducCwqAAAAAA76XPqW2RJtV9MeFzH_Enj9rHlz"></script>
-  
+        <Script
+          src="https://www.google.com/recaptcha/enterprise.js?render=6LducCwqAAAAAA76XPqW2RJtV9MeFzH_Enj9rHlz"
+          strategy="afterInteractive"
+        />
       </head>
       <body className={inter.className}>{children}</body>
     </html>
