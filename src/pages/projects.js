@@ -99,6 +99,8 @@ export default function Projects() {
         <main className={`flex min-h-screen flex-col items-center justify-between px-4 py-24 transition-colors ${themeClass}`}>
             <Header toggleTheme={toggleTheme} theme={theme} />
 
+            <h1 className="text-5xl font-bold mb-4 text-responsive-title">Projets</h1>
+            
             <div className="w-full mx-auto space-y-8 project-card">
                 {projects.map((project) => (
                     <div key={project.id} className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover:list:opacity-30">
