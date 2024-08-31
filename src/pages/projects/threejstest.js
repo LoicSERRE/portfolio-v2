@@ -15,7 +15,7 @@ const projectData = {
     ],
     isOnline: false,
     github: "https://github.com/LoicSERRE/API-RESThttps://github.com/LoicSERRE/ThreeJS-Test",
-    preview: "http://loicserre.freeboxos.fr:3000/CommingSoon"
+    preview: "https://loicserre.freeboxos.fr/CommingSoon"
 };
 
 export default function Projet() {
