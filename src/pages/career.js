@@ -44,7 +44,7 @@ export default function Career() {
     }, []);
 
     return (
-        <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`}>
+        <main className={`flex min-h-screen flex-col items-center justify-between p-24 transition-colors ${themeClass}`} style={{ marginTop: '4em' }}>
             <Header toggleTheme={toggleTheme} theme={theme} />
 
             <h1 className="text-5xl font-bold mb-4 text-responsive-title">Parcours universitaire et professionnel</h1>
