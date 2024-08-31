@@ -37,13 +37,13 @@ const LinkyButton = ({ href, label, icon, theme }) => {
         iconColor = 'white';
     }
     /* si on recoit dark theme on met le texte en blanc et l'icone en couleur */
-    else if (themeClass === 'white') {
+    else if (themeClass === 'default') {
         themeClass = 'text-black';
         iconColor = 'black';
     }
     /* si on recoit white theme on met le texte en noir et l'icone en couleur */
     else {
-        themeClass = 'white';
+        themeClass = 'text-white';
         iconColor = 'white';
     }
 
