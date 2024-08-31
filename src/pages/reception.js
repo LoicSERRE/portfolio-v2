@@ -5,6 +5,7 @@ import Footer from '@/components/footer';
 import { motion } from 'framer-motion';
 import LinkyButton from '@/components/linkybutton';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export default function Reception() {
     const { theme, toggleTheme, themeClass } = useTheme();
@@ -45,7 +46,7 @@ export default function Reception() {
                 </div>
 
                 <p className="text-lg mb-4">
-                    Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d&apos;ores et déjà aller sur la section suivante <a href="/career" className="text-red-500 underline">Parcours</a> pour en apprendre plus sur mon parcours universitaire et professionnel.
+                    Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d&apos;ores et déjà aller sur la section suivante <Link href="/career" className="text-red-500 underline">Parcours</Link> pour en apprendre plus sur mon parcours universitaire et professionnel.
                 </p>
             </motion.section>
 
