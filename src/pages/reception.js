@@ -45,7 +45,7 @@ export default function Reception() {
                 </div>
 
                 <p className="text-lg mb-4">
-                    Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d&apos;ores et déjà aller sur la section suivante &quot;Parcours&quot; en passant par le menu de navigation.
+                    Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d&apos;ores et déjà aller sur la section suivante <a href="/career" className="text-red-500 underline">Parcours</a> pour en apprendre plus sur mon parcours universitaire et professionnel.
                 </p>
             </motion.section>
 
