@@ -100,7 +100,8 @@ export default function Projects() {
             <Header toggleTheme={toggleTheme} theme={theme} />
 
             <h1 className="text-5xl font-bold mb-4 text-responsive-title">Projets</h1>
-            
+            <hr className="w-32 h-1 bg-gray-300 my-4" />
+
             <div className="w-full mx-auto space-y-8 project-card">
                 {projects.map((project) => (
                     <div key={project.id} className="group relative grid gap-4 pb-1 transition-all sm:grid-cols-8 sm:gap-8 md:gap-4 lg:hover:!opacity-100 lg:group-hover:list:opacity-30">
