@@ -24,6 +24,7 @@
     "intersection-observer": "^0.12.2",
     "jquery": "^3.7.1",
     "next": "14.2.4",
+    "portfolio-v2": "file:",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
