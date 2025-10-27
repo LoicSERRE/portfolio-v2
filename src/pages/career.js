@@ -59,9 +59,9 @@ export default function Career() {
                     <div className="cd-timeline-content">
                         <h2>Alternance chez Sopra Steria</h2>
                         <ul className="text-black">
-                            <li>Développement des services de gestion des formations et des campagnes d'inscription pour l'Université
+                            <li>Développement des services de gestion des formations et des campagnes d&apos;inscription pour l&apos;Université
                                 Paris-Saclay.</li>
-                            <li>Conception d’un module géomatique front-end (Angular) pour l’application de gestion du patrimoine routier de
+                            <li>Conception d’un module géomatique front-end (Angular) pour l&apos;application de gestion du patrimoine routier de
                                 la DIRMED.</li>
                         </ul>
                         <a href="https://www.soprasteria.com/fr" target="_blank" rel="noopener noreferrer" className="cd-read-more">En
