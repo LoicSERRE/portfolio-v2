@@ -49,7 +49,7 @@ export default function Career() {
 
             <h1 className="text-5xl font-bold mb-4 text-responsive-title">Parcours universitaire et professionnel</h1>
             <hr className="w-16 h-1 bg-gray-300 my-4" />
-            <p className="text-lg mb-8 text-responsive-paragraph">Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu&apos;à mon alternance actuelle chez Sopra Steria.</p>
+            <p className="text-lg mb-8 text-responsive-paragraph">Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu&apos;à mon alternance actuelle chez Sopra Steria.
             <section id="cd-timeline" className="cd-container">
 
                 <div className="cd-timeline-block is-hidden left" ref={el => timelineBlocks.current[0] = el}>
@@ -58,9 +58,14 @@ export default function Career() {
                     </div>
                     <div className="cd-timeline-content">
                         <h2>Alternance chez Sopra Steria</h2>
-                        <p className='text-black'>- Développement des services de gestion des formations et des campagnes d&apos;inscription pour l&apos;Université Paris-Saclay. <br>
-                                                  - Conception d’un module géomatique front-end (Angular) pour l’application de gestion du patrimoine routier de la DIRMED.</p>
-                        <a href="https://www.soprasteria.com/fr" target="_blank" rel="noopener noreferrer" className="cd-read-more">En savoir plus sur Sopra Steria</a>
+                        <ul className="text-black">
+                            <li>Développement des services de gestion des formations et des campagnes d'inscription pour l'Université
+                                Paris-Saclay.</li>
+                            <li>Conception d’un module géomatique front-end (Angular) pour l’application de gestion du patrimoine routier de
+                                la DIRMED.</li>
+                        </ul>
+                        <a href="https://www.soprasteria.com/fr" target="_blank" rel="noopener noreferrer" className="cd-read-more">En
+                            savoir plus sur Sopra Steria</a>
                         <span className="cd-date">Octobre 2024 - Septembre 2027</span>
                     </div>
                 </div>
