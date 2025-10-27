@@ -49,7 +49,7 @@ export default function Career() {
 
             <h1 className="text-5xl font-bold mb-4 text-responsive-title">Parcours universitaire et professionnel</h1>
             <hr className="w-16 h-1 bg-gray-300 my-4" />
-            <p className="text-lg mb-8 text-responsive-paragraph">Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu&apos;à mon alternance actuelle chez Sopra Steria.
+            <p className="text-lg mb-8 text-responsive-paragraph">Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu&apos;à mon alternance actuelle chez Sopra Steria. </p>
             <section id="cd-timeline" className="cd-container">
 
                 <div className="cd-timeline-block is-hidden left" ref={el => timelineBlocks.current[0] = el}>
