@@ -1,0 +1,150 @@
+{
+  "header": {
+    "mainMenu": "Menu principal",
+    "home": "Accueil",
+    "career": "Parcours",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "cv": {
+    "title": "Mon CV",
+    "description": "Vous pouvez télécharger mon CV en cliquant sur le bouton ci-dessous.",
+    "download": "Télécharger"
+  },
+  "footer": {
+    "copyright": "Loïc SERRE",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "home": {
+    "welcome": "Accueil",
+    "career": "Parcours",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "cv": "CV",
+    "contact": "Contact"
+  },
+  "reception": {
+    "title": "Hey, c'est Loïc SERRE",
+    "description1": "Étudiant en ingénierie informatique au {cesi} et actuellement en alternance chez {sopra}. Je suis passionné de technologie et de musique, curieux et toujours en quête de nouvelles connaissances.",
+    "description2": "Ceci est mon portfolio réalisé en Next.js et React. Le code est disponible sur le repository GitHub ci-dessous.",
+    "viewCode": "Voir le code",
+    "description3": "Dans ce portfolio, vous trouverez différentes sections présentant mes compétences, mon parcours, mes projets, et plus encore. Vous pouvez d'ores et déjà aller sur la section suivante {link} pour en apprendre plus sur mon parcours universitaire et professionnel.",
+    "careerLink": "Parcours"
+  },
+  "career": {
+    "title": "Parcours universitaire et professionnel",
+    "description": "Voici mon parcours universitaire et professionnel, de mon Baccalauréat STI2D jusqu'à mon alternance actuelle chez Sopra Steria.",
+    "sopra": {
+      "title": "Alternance chez Sopra Steria",
+      "description": "Développement des services de gestion des formations et des campagnes d'inscription pour l'Université Paris-Saclay.|Conception d'un module géomatique front-end (Angular) pour l'application de gestion du patrimoine routier de la DIRMED.",
+      "link": "En savoir plus sur Sopra Steria",
+      "date": "Octobre 2024 - Septembre 2027"
+    },
+    "cesi": {
+      "title": "École d'ingénieur CESI",
+      "description": "Admis à l'école d'ingénieur CESI, je poursuis ma formation en ingénierie informatique en alternance.",
+      "link": "Détails sur la formation",
+      "date": "2024-2027"
+    },
+    "mgps3": {
+      "title": "Alternance 3ème année BUT Informatique",
+      "description": "Durant cette alternance de 10 mois chez MGPS (Manutentions Gérée Par Satellites), la mission était de développer une refonte d'application. Ce logiciel est embarqué pour des engins fonctionnants sur les ports de commerce. J'ai réalisé la génération de cartographies de terminaux commerciaux, gestion des mouvements des engins, gestion des missions des caristes…",
+      "link": "Site de MGPS",
+      "date": "Septembre 2023 - Juin 2024"
+    },
+    "mgps2": {
+      "title": "Stage 2ème année BUT Informatique",
+      "description": "Durant ce stage de douze semaines chez MGPS (Manutentions Gérée Par Satellites), la mission donnée était de développer, depuis zéro, une application permettant de marquer tous les événements se déroulant sur un match de handball et ainsi profiter de statistiques très poussées et d'une application intuitive et facile d'utilisation.",
+      "link": "Site de MGPS",
+      "date": "Mars 2023 - Juin 2024"
+    },
+    "iut": {
+      "title": "BUT Informatique à l'Université d'Aix-Marseille",
+      "description": "J'ai suivi le parcours réalisation d'applications : conception, développement, validation. L'IUT d'Arles est spécialisé en imagerie numérique, j'ai donc pu acquérir des bases en imagerie 2D et 3D. Le BUT Informatique m'a permis d'acquérir des compétences solides en programmation, gestion de projet et conception de logiciels, tout en développant ma capacité à résoudre des problèmes complexes et à travailler en équipe.",
+      "link": "Détails sur la formation",
+      "date": "2021-2024"
+    },
+    "bac": {
+      "title": "Baccalauréat STI2D",
+      "description": "J'ai obtenu mon Baccalauréat STI2D avec une spécialisation en Systèmes d'Information et Numérique (SIN) avec mention bien.",
+      "link": "En savoir plus sur le Baccalauréat STI2D",
+      "date": "2020-2021"
+    }
+  },
+  "skills": {
+    "title": "Compétences",
+    "description": "Cliquez sur un logo pour en savoir plus"
+  },
+  "projects": {
+    "title": "Projets",
+    "availableOnline": "Disponible en ligne",
+    "project1": {
+      "title": "PoC Cartographie Portuaire",
+      "description": "Développement d'un PoC dans le cadre de ma dernière année de BUT Informatique, ce projet permet de gérer une cartographie de port commercial."
+    },
+    "project2": {
+      "title": "Traitement d'images",
+      "description": "Création d'un notebook en Python pour développer différents algorithmes de segmentation et de classification d'images."
+    },
+    "project3": {
+      "title": "API REST",
+      "description": "Exercice de création d'une API en JavaScript avec le respect des principes REST."
+    },
+    "project4": {
+      "title": "Contrôle de ThreeJS",
+      "description": "Scène 3D dans le cadre d'une évaluation en Three.js."
+    },
+    "project5": {
+      "title": "Agenda",
+      "description": "Développement d'un agenda en React sans utiliser de bibliothèques pour la création de l'agenda."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "N'hésitez pas à me contacter en remplissant le formulaire ci-dessous et je vous répondrai dès que possible.",
+    "namePlaceholder": "Votre nom",
+    "emailPlaceholder": "Votre email",
+    "messagePlaceholder": "Votre message",
+    "successMessage": "Message envoyé avec succès !\\nJe vous répondrai dans les plus brefs délais.",
+    "errorMessage": "Échec de l'envoi du message. Veuillez m'excuser pour la gêne occasionnée, contactez-moi directement via mes réseaux sociaux."
+  },
+  "projectDetail": {
+    "technologiesUsed": "Technologies Utilisées",
+    "viewOnGithub": "Voir sur GitHub",
+    "viewProject": "Voir le projet",
+    "projectRender": "Rendu du projet ci-dessous"
+  },
+  "projectPages": {
+    "restapi": {
+      "title": "API REST",
+      "date": "2023-2024",
+      "description": "Ce projet avait pour objectif de créer une API REST en JavaScript avec NodeJS et Express. Nous avions une liberté quant à la thématique de l'API, j'ai donc choisi de créer une base de données très simple pour l'organisation de tournois de jeux vidéos. Dans cette API, la structure respecte l'architecture REST. J'ai mis en place un token d'authentification pour sécuriser l'API, ainsi que des tests unitaires et une documentation."
+    },
+    "agenda": {
+      "title": "Agenda",
+      "date": "2022-2023",
+      "description": "Ce projet avait pour objectif d'explorer le développement avec le framework React en créant un agenda associé à une liste d'événements. Étant donné les contraintes du projet, l'utilisation de bibliothèques pour la création de l'agenda était interdite."
+    },
+    "projetannuel": {
+      "title": "PoC Cartographie Portuaire",
+      "date": "2023-2024",
+      "description": "Ce projet constitue le travail annuel de la troisième année du BUT Informatique. Il s'agit de développer une API REST, suivie d'une application web qui communiquent avec cette API. Le projet est réalisé en rapport avec l'entreprise qui m'accueille en alternance, MGPS. Dans mon cas, il s'agit d'un proof of concept (POC) permettant à un utilisateur de gérer une cartographie de port commercial. L'utilisateur peut ainsi modifier les emplacements des conteneurs, les déplacer, les supprimer, les ajouter, etc... Ceci permet d'éviter à l'entreprise de changer manuellement les emplacements des conteneurs sur les ports."
+    },
+    "imageprocessing": {
+      "title": "Traitement d'images",
+      "date": "2023-2024",
+      "description": "Ce projet a été réalisé dans le cadre du cours de modélisation mathématique. L'objectif était de créer un notebook en Python pour développer l'algorithme d'Otsu, permettant un seuillage automatique d'image. Par la suite, nous avons mis en place un algorithme de segmentation d'image utilisant l'algorithme de K-means."
+    },
+    "threejstest": {
+      "title": "Contrôle de ThreeJS",
+      "date": "2023-2024",
+      "description": "L'une des spécialités de l'IUT Informatique d'Arles est l'imagerie numérique. J'ai eu l'occasion de découvrir la technologie ThreeJS, une bibliothèque de développement JavaScript pour la création de scènes 3D dans un navigateur web. Nous avons réalisé un contrôle TP de 2 heures sur cette technologie, et j'ai ensuite légèrement modifié le projet pour le rendre plus présentable."
+    }
+  },
+  "skillScene": {
+    "clickTip": "Cliquez sur un logo pour en savoir plus"
+  }
+}

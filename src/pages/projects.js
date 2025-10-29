@@ -1,4 +1,5 @@
 import useTheme from '../hooks/useTheme';
+import useTranslations from '../hooks/useTranslations';
 import { useState, useEffect } from 'react';
 import '../app/globals.css';
 import Header from '@/components/header';
@@ -18,12 +19,13 @@ async function fetchGithubStars(repos) {
 
 export default function Projects() {
     const { theme, toggleTheme, themeClass } = useTheme();
+    const { t, isReady } = useTranslations();
 
     const [projects, setProjects] = useState([
         {
             id: 1,
-            title: "PoC Cartographie Portuaire",
-            description: "Développement d'un PoC dans le cadre de ma dernière année de BUT Informatique, ce projet permet de gérer une cartographie de port commercial.",
+            title: "projects.project1.title",
+            description: "projects.project1.description",
             technologies: ["JavaScript", "Node.js", "Express", "React", "Docker", "GitLab"],
             isOnline: false,
             link: "/projects/projetannuel",
@@ -33,8 +35,8 @@ export default function Projects() {
         },
         {
             id: 2,
-            title: "Traitement d'images",
-            description: "Création d'un notebook en Python pour développer différents algorithmes de segmentation et de classification d'images.",
+            title: "projects.project2.title",
+            description: "projects.project2.description",
             technologies: ["Python", "Jupyter Notebook"],
             isOnline: true,
             link: "/projects/imageprocessing",
@@ -44,8 +46,8 @@ export default function Projects() {
         },
         {
             id: 3,
-            title: "API REST",
-            description: "Exercice de création d'une API en JavaScript avec le respect des principes REST.",
+            title: "projects.project3.title",
+            description: "projects.project3.description",
             technologies: ["JavaScript", "Node.js", "Express", "JwT", "Postman", "Mocha", "Chai"],
             isOnline: false,
             link: "/projects/restapi",
@@ -55,8 +57,8 @@ export default function Projects() {
         },
         {
             id: 4,
-            title: "Contrôle de ThreeJS",
-            description: "Scène 3D dans le cadre d'une évaluation en Three.js.",
+            title: "projects.project4.title",
+            description: "projects.project4.description",
             technologies: ["JavaScript", "Three.js"],
             isOnline: false,
             link: "/projects/threejstest",
@@ -66,8 +68,8 @@ export default function Projects() {
         },
         {
             id: 5,
-            title: "Agenda",
-            description: "Développement d'un agenda en React sans utiliser de bibliothèques pour la création de l'agenda.",
+            title: "projects.project5.title",
+            description: "projects.project5.description",
             technologies: ["JavaScript", "React", "CSS", "Node.js"],
             isOnline: false,
             link: "/projects/agenda",
@@ -95,11 +97,13 @@ export default function Projects() {
     const textColorClass = theme === 'dark' ? 'text-white' : theme === 'gradient' ? 'text-gray-100' : 'text-black';
     const linkHoverClass = 'hover:text-teal-300 focus-visible:text-teal-300';
 
+    if (!isReady) return null;
+
     return (
         <main className={`flex min-h-screen flex-col items-center justify-between px-4 py-24 transition-colors ${themeClass}`}>
             <Header toggleTheme={toggleTheme} theme={theme} />
 
-            <h1 className="text-5xl font-bold mb-4 text-responsive-title">Projets</h1>
+            <h1 className="text-5xl font-bold mb-4 text-responsive-title">{t('projects.title')}</h1>
             <hr className="w-32 h-1 bg-gray-300 my-4" />
 
             <div className="w-full mx-auto space-y-8 project-card">
@@ -110,12 +114,13 @@ export default function Projects() {
                             <h3>
                                 <Link href={project.link} target="_blank" rel="noreferrer noopener" legacyBehavior>
                                     <a
+                                        href={project.link}
                                         className={`inline-flex items-baseline font-medium leading-tight ${textColorClass} ${linkHoverClass} group/link text-base ml-4`}
-                                        aria-label={`${project.title} (opens in a new tab)`}
+                                        aria-label={`${t(project.title)} (opens in a new tab)`}
                                     >
                                         <span className="relative mt-2">
                                             <span>
-                                                {project.title}
+                                                {t(project.title)}
                                                 <span className="inline-block">
                                                     <svg
                                                         xmlns="http://www.w3.org/2000/svg"
@@ -152,15 +157,16 @@ export default function Projects() {
                                             clipRule="evenodd"
                                         />
                                     </svg>
-                                    Disponible en ligne
+                                    {t('projects.availableOnline')}
                                 </div>
                             )}
 
-                            <h4 className="mt-2 text-sm text-white ml-4 mr-2">{project.description}</h4>
+                            <h4 className="mt-2 text-sm text-white ml-4 mr-2">{t(project.description)}</h4>
 
                             {project.githubStars !== 0 && (
                                 <Link href={project.link} target="_blank" rel="noreferrer noopener" legacyBehavior>
                                     <a
+                                        href={project.link}
                                         className={`relative ml-4 mt-2 inline-flex items-center text-sm font-medium ${textColorClass} ${linkHoverClass}`}
                                         aria-label={`${project.githubStars} stars on GitHub (opens in a new tab)`}
                                     >
@@ -183,8 +189,8 @@ export default function Projects() {
                             )}
 
                             <ul className="mt-2 flex flex-wrap" aria-label="Technologies used:">
-                                {project.technologies.map((tech, index) => (
-                                    <li key={index} className="mr-1.5 mt-2">
+                                {project.technologies.map((tech) => (
+                                    <li key={tech} className="mr-1.5 mt-2">
                                         <div className={`flex items-center rounded-full bg-teal-400/10 px-3 py-1 ml-2 text-xs font-medium leading-5 text-teal-300`}>
                                             {tech}
                                         </div>

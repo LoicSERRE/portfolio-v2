@@ -1,10 +1,15 @@
 import React from 'react';
+import useTranslations from '../hooks/useTranslations';
 import '../app/globals.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
 
 export default function ProjectDetail({ project }) {
+    const { t, isReady } = useTranslations();
+
+    if (!isReady) return null;
+
     return (
         <div className="project-detail">
             <div className="project-banner">
@@ -21,7 +26,7 @@ export default function ProjectDetail({ project }) {
             </div>
             <div className="project-info">
                 <div className="project-tech">
-                    <h3>Technologies Utilisées</h3>
+                    <h3>{t('projectDetail.technologiesUsed')}</h3>
                     <ul className="tech-list">
                         {project.technologies.map((tech, index) => (
                             <li key={index} className="tech-item">
@@ -34,10 +39,10 @@ export default function ProjectDetail({ project }) {
                     </ul>
                 </div>
                 <div className="project-links">
-                    <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">Voir sur GitHub</a>
+                    <a href={project.github} className="project-link" target="_blank" rel="noopener noreferrer">{t('projectDetail.viewOnGithub')}</a>
                     {project.isOnline && (
                         <a href={project.preview} className="project-link" target="_blank" rel="noopener noreferrer">
-                            Voir le projet
+                            {t('projectDetail.viewProject')}
                         </a>
                     )}                
                 </div>
@@ -46,7 +51,7 @@ export default function ProjectDetail({ project }) {
                 <div className="project-preview-container">
                     <h3 className="project-preview-title">
                         <FontAwesomeIcon icon={faEye} className="project-preview-icon" />
-                        Rendu du projet ci-dessous
+                        {t('projectDetail.projectRender')}
                     </h3>
                     <iframe src={project.preview} className="project-preview" title="Project Preview"></iframe>
                 </div>

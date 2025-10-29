@@ -1,19 +1,34 @@
 import { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun, faPalette } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun, faPalette, faLanguage } from '@fortawesome/free-solid-svg-icons';
 import Link from 'next/link';
 import '../app/globals.css';
+import useTranslations from '@/hooks/useTranslations';
 
 export default function Header({ toggleTheme, theme }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isHomePage, setIsHomePage] = useState(false);
+    const [showLangMenu, setShowLangMenu] = useState(false);
+    const { t, locale, changeLanguage, isReady } = useTranslations();
 
     useEffect(() => {
-        setIsHomePage(window.location.pathname === '/');
+        setIsHomePage(globalThis.location.pathname === '/');
     }, []);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
+    };
+
+    const handleLanguageChange = (lang) => {
+        changeLanguage(lang);
+    };
+
+    if (!isReady) return null;
+
+    const getThemeIcon = () => {
+        if (theme === 'dark') return faMoon;
+        if (theme === 'gradient') return faPalette;
+        return faSun;
     };
 
     return (
@@ -21,9 +36,19 @@ export default function Header({ toggleTheme, theme }) {
             <a href="/" className="text-2xl font-bold homepage-name">Loïc SERRE</a>
             
             <div className="buttons_header">
+                {/* Bouton de changement de langue */}
+                <button 
+                    onClick={() => handleLanguageChange(locale === 'fr' ? 'en' : 'fr')}
+                    className="language-button"
+                    aria-label="Change language"
+                    title={locale === 'fr' ? 'Switch to English' : 'Passer en français'}
+                >
+                    <span className="lang-code">{locale === 'fr' ? 'EN' : 'FR'}</span>
+                </button>
+
                 {/* Bouton de changement de thème */}
                 <button onClick={toggleTheme} className="theme-toggle-button">
-                    <FontAwesomeIcon icon={theme === 'dark' ? faMoon : theme === 'gradient' ? faPalette : faSun} />
+                    <FontAwesomeIcon icon={getThemeIcon()} />
                 </button>
 
                 {/* Bouton du menu burger */}
@@ -46,13 +71,13 @@ export default function Header({ toggleTheme, theme }) {
             {!isHomePage && (
                 <nav id="sidebarMenu" className={isMenuOpen ? 'open' : ''}>
                     <ul className="sidebarMenuInner">
-                        <li><Link legacyBehavior href="/"><a>Menu principal</a></Link></li>
-                        <li><Link legacyBehavior href="/reception"><a>Accueil</a></Link></li>
-                        <li><Link legacyBehavior href="/career"><a>Parcours</a></Link></li>
-                        <li><Link legacyBehavior href="/skills"><a>Compétences</a></Link></li>
-                        <li><Link legacyBehavior href="/projects"><a>Projets</a></Link></li>
-                        <li><Link legacyBehavior href="/cv"><a>CV</a></Link></li>
-                        <li><Link legacyBehavior href="/contact"><a>Contact</a></Link></li>
+                        <li><Link legacyBehavior href="/"><a href="/">{t('header.mainMenu')}</a></Link></li>
+                        <li><Link legacyBehavior href="/reception"><a href="/reception">{t('header.home')}</a></Link></li>
+                        <li><Link legacyBehavior href="/career"><a href="/career">{t('header.career')}</a></Link></li>
+                        <li><Link legacyBehavior href="/skills"><a href="/skills">{t('header.skills')}</a></Link></li>
+                        <li><Link legacyBehavior href="/projects"><a href="/projects">{t('header.projects')}</a></Link></li>
+                        <li><Link legacyBehavior href="/cv"><a href="/cv">{t('header.cv')}</a></Link></li>
+                        <li><Link legacyBehavior href="/contact"><a href="/contact">{t('header.contact')}</a></Link></li>
                     </ul>
                 </nav>
             )}

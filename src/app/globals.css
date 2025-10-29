@@ -1940,6 +1940,38 @@ footer {
   transform: scale(1.1);
 }
 
+/* Bouton de sélection de langue */
+.language-button {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: transparent;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  letter-spacing: 0.5px;
+}
+
+.language-button:hover {
+  transform: scale(1.1);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.language-button:active {
+  transform: scale(1.05);
+}
+
+.language-button .lang-code {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
 /* Menu burger */
 .openSidebarMenu {
   display: none;

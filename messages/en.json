@@ -1,0 +1,150 @@
+{
+  "header": {
+    "mainMenu": "Main Menu",
+    "home": "Home",
+    "career": "Career",
+    "skills": "Skills",
+    "projects": "Projects",
+    "cv": "Resume",
+    "contact": "Contact"
+  },
+  "cv": {
+    "title": "My Resume",
+    "description": "You can download my resume by clicking the button below.",
+    "download": "Download"
+  },
+  "footer": {
+    "copyright": "Loïc SERRE",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "home": {
+    "welcome": "Home",
+    "career": "Career",
+    "skills": "Skills",
+    "projects": "Projects",
+    "cv": "Resume",
+    "contact": "Contact"
+  },
+  "reception": {
+    "title": "Hey, I'm Loïc SERRE",
+    "description1": "Computer engineering student at {cesi} and currently doing an apprenticeship at {sopra}. I'm passionate about technology and music, curious and always seeking new knowledge.",
+    "description2": "This is my portfolio built with Next.js and React. The code is available on the GitHub repository below.",
+    "viewCode": "View Code",
+    "description3": "In this portfolio, you will find different sections presenting my skills, my career, my projects, and more. You can already go to the next section {link} to learn more about my academic and professional background.",
+    "careerLink": "Career"
+  },
+  "career": {
+    "title": "Academic and Professional Background",
+    "description": "Here is my academic and professional background, from my STI2D Baccalaureate to my current apprenticeship at Sopra Steria.",
+    "sopra": {
+      "title": "Apprenticeship at Sopra Steria",
+      "description": "Development of training management services and registration campaigns for Paris-Saclay University.|Design of a front-end geomatics module (Angular) for the DIRMED road asset management application.",
+      "link": "Learn more about Sopra Steria",
+      "date": "October 2024 - September 2027"
+    },
+    "cesi": {
+      "title": "CESI Engineering School",
+      "description": "Admitted to CESI engineering school, I continue my training in computer engineering through apprenticeship.",
+      "link": "Training details",
+      "date": "2024-2027"
+    },
+    "mgps3": {
+      "title": "3rd Year IT BUT Apprenticeship",
+      "description": "During this 10-month apprenticeship at MGPS (Satellite Managed Handling), the mission was to develop an application redesign. This software is embedded for equipment operating in commercial ports. I carried out the generation of commercial terminal maps, management of equipment movements, management of forklift driver missions…",
+      "link": "MGPS Website",
+      "date": "September 2023 - June 2024"
+    },
+    "mgps2": {
+      "title": "2nd Year IT BUT Internship",
+      "description": "During this twelve-week internship at MGPS (Satellite Managed Handling), the given mission was to develop, from scratch, an application to mark all events occurring in a handball match and thus benefit from very detailed statistics and an intuitive and easy-to-use application.",
+      "link": "MGPS Website",
+      "date": "March 2023 - June 2024"
+    },
+    "iut": {
+      "title": "IT BUT at Aix-Marseille University",
+      "description": "I followed the application development track: design, development, validation. The IUT of Arles specializes in digital imaging, so I was able to acquire basics in 2D and 3D imaging. The IT BUT allowed me to acquire solid skills in programming, project management and software design, while developing my ability to solve complex problems and work in a team.",
+      "link": "Training details",
+      "date": "2021-2024"
+    },
+    "bac": {
+      "title": "STI2D Baccalaureate",
+      "description": "I obtained my STI2D Baccalaureate with a specialization in Information and Digital Systems (SIN) with honors.",
+      "link": "Learn more about the STI2D Baccalaureate",
+      "date": "2020-2021"
+    }
+  },
+  "skills": {
+    "title": "Skills",
+    "description": "Click on a logo to learn more"
+  },
+  "projects": {
+    "title": "Projects",
+    "availableOnline": "Available online",
+    "project1": {
+      "title": "Port Mapping PoC",
+      "description": "Development of a PoC as part of my final year of IT BUT, this project allows you to manage a commercial port map."
+    },
+    "project2": {
+      "title": "Image Processing",
+      "description": "Creation of a Python notebook to develop different image segmentation and classification algorithms."
+    },
+    "project3": {
+      "title": "REST API",
+      "description": "Exercise in creating an API in JavaScript with respect to REST principles."
+    },
+    "project4": {
+      "title": "ThreeJS Control",
+      "description": "3D scene as part of a Three.js evaluation."
+    },
+    "project5": {
+      "title": "Calendar",
+      "description": "Development of a calendar in React without using libraries for the creation of the calendar."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Feel free to contact me by filling out the form below and I will respond as soon as possible.",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "Your email",
+    "messagePlaceholder": "Your message",
+    "successMessage": "Message sent successfully! \n I will respond to you as soon as possible.",
+    "errorMessage": "Failed to send message. Please excuse the inconvenience, contact me directly via my social networks."
+  },
+  "projectDetail": {
+    "technologiesUsed": "Technologies Used",
+    "viewOnGithub": "View on GitHub",
+    "viewProject": "View Project",
+    "projectRender": "Project render below"
+  },
+  "projectPages": {
+    "restapi": {
+      "title": "REST API",
+      "date": "2023-2024",
+      "description": "This project aimed to create a REST API in JavaScript with NodeJS and Express. We had freedom regarding the API theme, so I chose to create a very simple database for organizing video game tournaments. In this API, the structure respects the REST architecture. I implemented an authentication token to secure the API, as well as unit tests and documentation."
+    },
+    "agenda": {
+      "title": "Calendar",
+      "date": "2022-2023",
+      "description": "This project aimed to explore development with the React framework by creating a calendar associated with a list of events. Given the project constraints, the use of libraries for creating the calendar was prohibited."
+    },
+    "projetannuel": {
+      "title": "Port Mapping PoC",
+      "date": "2023-2024",
+      "description": "This project constitutes the annual work of the third year of the IT BUT. It involves developing a REST API, followed by a web application that communicates with this API. The project is carried out in relation to the company that hosts me in work-study, MGPS. In my case, it is a proof of concept (POC) allowing a user to manage a commercial port map. The user can thus modify container locations, move them, delete them, add them, etc... This allows the company to avoid manually changing container locations at ports."
+    },
+    "imageprocessing": {
+      "title": "Image Processing",
+      "date": "2023-2024",
+      "description": "This project was carried out as part of the mathematical modeling course. The objective was to create a Python notebook to develop Otsu's algorithm, allowing automatic image thresholding. Subsequently, we implemented an image segmentation algorithm using the K-means algorithm."
+    },
+    "threejstest": {
+      "title": "ThreeJS Control",
+      "date": "2023-2024",
+      "description": "One of the specialties of the IUT Computer Science of Arles is digital imaging. I had the opportunity to discover the ThreeJS technology, a JavaScript development library for creating 3D scenes in a web browser. We carried out a 2-hour practical test on this technology, and I then slightly modified the project to make it more presentable."
+    }
+  },
+  "skillScene": {
+    "clickTip": "Click on a logo to learn more"
+  }
+}
