@@ -71,13 +71,13 @@ export default function Header({ toggleTheme, theme }) {
             {!isHomePage && (
                 <nav id="sidebarMenu" className={isMenuOpen ? 'open' : ''}>
                     <ul className="sidebarMenuInner">
-                        <li><Link legacyBehavior href="/"><a href="/">{t('header.mainMenu')}</a></Link></li>
-                        <li><Link legacyBehavior href="/reception"><a href="/reception">{t('header.home')}</a></Link></li>
-                        <li><Link legacyBehavior href="/career"><a href="/career">{t('header.career')}</a></Link></li>
-                        <li><Link legacyBehavior href="/skills"><a href="/skills">{t('header.skills')}</a></Link></li>
-                        <li><Link legacyBehavior href="/projects"><a href="/projects">{t('header.projects')}</a></Link></li>
-                        <li><Link legacyBehavior href="/cv"><a href="/cv">{t('header.cv')}</a></Link></li>
-                        <li><Link legacyBehavior href="/contact"><a href="/contact">{t('header.contact')}</a></Link></li>
+                        <li><Link href="/" className="sidebar-link">{t('header.mainMenu')}</Link></li>
+                        <li><Link href="/reception" className="sidebar-link">{t('header.home')}</Link></li>
+                        <li><Link href="/career" className="sidebar-link">{t('header.career')}</Link></li>
+                        <li><Link href="/skills" className="sidebar-link">{t('header.skills')}</Link></li>
+                        <li><Link href="/projects" className="sidebar-link">{t('header.projects')}</Link></li>
+                        <li><Link href="/cv" className="sidebar-link">{t('header.cv')}</Link></li>
+                        <li><Link href="/contact" className="sidebar-link">{t('header.contact')}</Link></li>
                     </ul>
                 </nav>
             )}
